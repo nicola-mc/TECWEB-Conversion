@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Conversione</title>
+    <link rel="icon" href="images/favicon.png" sizes="16x16">
+    <link rel="stylesheet " href="style.css">
+</head>
+<body>
+    <h3>Convertitore della Temperatura da Celsius a Fahrenheit e viceversa.</h3>
+    <p>Inserisci il valore della temperatura in un box sottostante.</p>
+    <form>
+        <hr>
+        <label for="celsius">Celsius:</label><br>
+        <input type="number" id="celsius" oninput="converitoreTemp(this)">
+        <br>
+        <br>
+        <label for="fahrenheit">Fahrenheit:</label><br>
+        <input type="number" id="fahrenheit" oninput="converitoreTemp(this)">
+
+        <hr>
+        <p>Un po' di matematica:
+            <ul>
+                <li>per convertire gradi Celsius in gradi Fahrenheit, basta moltiplicare la temperatura per 9 diviso 5
+                    e sommare il risultato a 32.</li>
+                <li>per convertire gradi Fahrenhei in gradi Celsius, basta sottrarre la temperatura per 32 e
+                    moltiplicare il risultato per 5 diviso 9.</li>
+            </ul>
+    </form>
+    <script src="temp_conv.js"></script> <!-- Gli script in JS vanno sempre alla fine del body! -->
+</body>
+</html>
+
+<!-- Commento al codice:
+
+1) oninput serve per eseguire un comando in JS quando l'utente scrive qualcosa nel campo input. Nel nostro caso, quando
+l'utente inserisce un valore per la temperature in Celsius da convertire, viene chiamata la funzione in JS per
+convertirlo in Fahrenheit.
+
+2) document.getElementById("output").innerHTML=formula significa questo: inizializza l'attributo output con il valore
+della temperatura in Fahrenheit, calcolato dalla formula. innerHTML che cosa fa? Cambia il contenuto presente in un tag
+<p>. Infatti quando si inserisce un valore, NaN viene sostituito dalla temperatura in Fahrenheit-->
